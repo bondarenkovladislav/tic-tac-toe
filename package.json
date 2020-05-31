@@ -1,5 +1,5 @@
 {
-  "proxy": "https://still-plateau-44878.herokuapp.com/",
+  "proxy": "http://localhost:4433",
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +15,7 @@
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
+    "@types/socket.io-client": "^1.4.33",
     "axios": "^0.19.2",
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
@@ -22,6 +23,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "socket.io-client": "^2.3.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
