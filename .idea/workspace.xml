@@ -2,68 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c7b06a0-2fe3-4691-8c11-0ed8c566d119" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Home.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Main.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Main.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/ApiClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tic-tac-toe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tic-tac-toe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.idea/client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Home/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Login/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Main/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/apiClient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/serviceWorker.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/setupTests.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Pipfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Pipfile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/__main__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/http/api/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/http/api/endpoints.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/http/api/middlewares.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/kudo/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/kudo/schema.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/kudo/service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/repository/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/repository/mongo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/runtime.txt" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/services/GameService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/services/WebSocketService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/services/WebSocketService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,8 +34,16 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/classes/services" />
+      <recent name="$PROJECT_DIR$/src/classes" />
+      <recent name="$PROJECT_DIR$/src/services/classes" />
+      <recent name="$PROJECT_DIR$/src/services/" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -106,21 +56,50 @@
       <option name="presentableId" value="Default" />
       <updated>1590338419105</updated>
       <workItem from="1590338422455" duration="609000" />
-      <workItem from="1590339037089" duration="1108000" />
+      <workItem from="1590339037089" duration="1211000" />
+      <workItem from="1590927429800" duration="6648000" />
+      <workItem from="1591017523642" duration="548000" />
+      <workItem from="1591191783136" duration="897000" />
     </task>
+    <task id="LOCAL-00001" summary="WebSocket client set up">
+      <created>1590944577232</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590944577232</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="WebSocket client set up" />
+    <option name="LAST_COMMIT_MESSAGE" value="WebSocket client set up" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="461" y="239" key="SettingsEditor" timestamp="1590339182175">
+    <state x="363" y="108" key="CommitChangelistDialog2" timestamp="1590944577004">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="363" y="108" key="CommitChangelistDialog2/-332.-1080.2560.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1590944577004" />
+    <state x="461" y="239" key="SettingsEditor" timestamp="1590927451424">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="461" y="239" key="SettingsEditor/-332.-1080.2560.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1590339182175" />
-    <state x="662" y="339" width="596" height="522" key="find.popup" timestamp="1590338615647">
+    <state x="461" y="239" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1590927451424" />
+    <state x="560" y="336" key="Vcs.Push.Dialog.v2" timestamp="1590944578503">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="560" y="336" key="Vcs.Push.Dialog.v2/-332.-1080.2560.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1590944578503" />
+    <state x="662" y="339" width="596" height="522" key="find.popup" timestamp="1590939792598">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="662" y="339" width="596" height="522" key="find.popup/-332.-1080.2560.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1590338615647" />
+    <state x="662" y="339" width="596" height="522" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1590939792598" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1590939614572">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1590939614572" />
   </component>
 </project>

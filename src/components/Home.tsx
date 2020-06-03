@@ -1,7 +1,11 @@
 import Button from '@material-ui/core/Button'
 import React, { useState } from 'react'
 import { ApiClient } from '../classes/services/ApiClient'
-import { WebSocketService } from '../classes/services/WebSocketService'
+import {
+  WebSocketService,
+  WsMessageType,
+} from '../classes/services/WebSocketService'
+import { GameService } from '../classes/services/GameService'
 export const Home = () => {
   const [reqRes, setReqRes] = useState()
   return (
@@ -22,10 +26,17 @@ export const Home = () => {
       </Button>
       <Button
         onClick={() => {
-          WebSocketService.sendJson({ test: 'Hellp' })
+          GameService.MakeStep({ coords: [0, 0] })
         }}
       >
-        Send Ws JSON
+        Send 0,0 Player position
+      </Button>
+      <Button
+        onClick={() => {
+          GameService.MakeStep({ coords: [2, 2] })
+        }}
+      >
+        Send 2,2 Player position
       </Button>
       <div dangerouslySetInnerHTML={{ __html: reqRes }} />
     </div>

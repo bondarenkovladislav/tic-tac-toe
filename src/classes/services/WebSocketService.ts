@@ -1,5 +1,9 @@
 import io from 'socket.io-client'
 
+export enum WsMessageType {
+  Step = 'Step'
+}
+
 class WebSocketService {
   private socketClient: any
   public init = () => {
