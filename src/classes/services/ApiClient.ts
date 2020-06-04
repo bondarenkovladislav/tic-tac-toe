@@ -8,6 +8,10 @@ export class ApiClient {
     return (await axios.get('http://localhost:4433/')).data
   }
 
+  public static get = async (endpoint: string) => {
+    return (await axios.get(`http://localhost:4433${endpoint}`)).data
+  }
+
   public static login = async (userName: string) => {
     const result = (
       await axios.get(`http://localhost:4433/login?userName=${userName}`)

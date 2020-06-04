@@ -12,4 +12,8 @@ export class GameService {
       ...step,
     })
   }
+
+  public static getScoreBoard = () => {
+
+  }
 }

@@ -7,7 +7,9 @@ import {
 } from '../classes/services/WebSocketService'
 import { GameService } from '../classes/services/GameService'
 import { TextField } from '@material-ui/core'
-export const Home = () => {
+import { withRouter } from 'react-router-dom'
+
+const Home_ = (props: any) => {
   const [userName, setUserName] = useState('')
   const [reqRes, setReqRes] = useState()
   return (
@@ -58,6 +60,16 @@ export const Home = () => {
         Logout
       </Button>
       <div dangerouslySetInnerHTML={{ __html: reqRes }} />
+      <br />
+      <Button
+        variant={'outlined'}
+        color={'secondary'}
+        onClick={() => props.history.push('/leaderboard')}
+      >
+        Open Leaderboard
+      </Button>
     </div>
   )
 }
+
+export const Home = withRouter(Home_)

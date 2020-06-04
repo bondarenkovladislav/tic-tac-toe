@@ -5,7 +5,7 @@ import { createBrowserHistory } from 'history'
 import { Main } from './components/Main'
 import { InitializationService } from './classes/services/InitializationService'
 
-const history = createBrowserHistory()
+export const history = createBrowserHistory()
 InitializationService.init()
 ReactDOM.render(
   <Router history={history}>
