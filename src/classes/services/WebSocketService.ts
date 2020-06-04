@@ -1,7 +1,7 @@
 import io from 'socket.io-client'
 
 export enum WsMessageType {
-  Step = 'Step'
+  Step = 'Step',
 }
 
 class WebSocketService {

@@ -6,7 +6,9 @@ import {
   WsMessageType,
 } from '../classes/services/WebSocketService'
 import { GameService } from '../classes/services/GameService'
+import { TextField } from '@material-ui/core'
 export const Home = () => {
+  const [userName, setUserName] = useState('')
   const [reqRes, setReqRes] = useState()
   return (
     <div>
@@ -37,6 +39,23 @@ export const Home = () => {
         }}
       >
         Send 2,2 Player position
+      </Button>
+      <br />
+      <TextField
+        variant={'outlined'}
+        value={userName}
+        placeholder={'User Name'}
+        onChange={(e) => setUserName(e.target.value)}
+      />
+      <Button variant={'contained'} onClick={() => ApiClient.login(userName)}>
+        Login
+      </Button>
+      <Button
+        color={'primary'}
+        variant={'outlined'}
+        onClick={() => localStorage.removeItem('token')}
+      >
+        Logout
       </Button>
       <div dangerouslySetInnerHTML={{ __html: reqRes }} />
     </div>
