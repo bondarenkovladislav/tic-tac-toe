@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c7b06a0-2fe3-4691-8c11-0ed8c566d119" name="Default Changelist" comment="Temp main page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0c7b06a0-2fe3-4691-8c11-0ed8c566d119" name="Default Changelist" comment="Temp main page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +57,7 @@
       <workItem from="1591191783136" duration="1214000" />
       <workItem from="1591285329233" duration="3609000" />
       <workItem from="1592158305591" duration="1950000" />
-      <workItem from="1592414711299" duration="610000" />
+      <workItem from="1592414711299" duration="1013000" />
     </task>
     <task id="LOCAL-00001" summary="WebSocket client set up">
       <created>1590944577232</created>
@@ -119,6 +117,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="port disable" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="684" y="400" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592415446903">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="684" y="400" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1200@0.0.1920.1200" timestamp="1592415446903" />
     <state x="363" y="108" key="CommitChangelistDialog2" timestamp="1592159874267">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
