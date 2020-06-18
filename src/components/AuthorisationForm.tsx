@@ -38,9 +38,13 @@ export const AuthorisationForm = (props: any) => {
                         variant="contained"
                         color="primary"
                         onClick={() => {
+                            if(userName=='')
+                                alert('Error! Invalid data')
+                            else{
                             ApiClient.login(userName)
                             //let token = ;
                             //localStorage.setItem('key', token)
+                            }
                         }
                         }
                     >
