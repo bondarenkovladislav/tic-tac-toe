@@ -8,8 +8,8 @@ export const ToolBar = () => {
         <div>
             <AppBar>
                 <Tabs value={null}>
-                    <Tab onClick={() => window.location.assign('/leaderboard')} label="Results Page" />
-                    <Tab label="Exit" />
+                    <Tab onClick={() => window.location.assign('/results')} label="Results Page" />
+                    <Tab onClick={()=>window.location.assign('/login')} label="Exit" />
                 </Tabs>
             </AppBar>
         </div>
