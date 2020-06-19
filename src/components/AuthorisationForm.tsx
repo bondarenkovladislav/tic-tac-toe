@@ -42,8 +42,8 @@ export const AuthorisationForm = (props: any) => {
                             alert('Error! Invalid data')
                         else {
                             ApiClient.login(userName)
+                            window.location.assign('/wait')
                         }
-                        ApiClient.login(userName)
                         //let token = ;
                         //localStorage.setItem('key', token)
                     }

@@ -5,6 +5,7 @@ import { LeaderBoardPage } from './LeaderBoardPage'
 import { TempPage } from './TempPage'
 import { AuthorisationForm } from './AuthorisationForm'
 import {ResultsPage} from './ResultsPage'
+import {WaitPage} from './WaitPage'
 
 export const Main = () => {
   return (
@@ -15,6 +16,7 @@ export const Main = () => {
         <Route exact path={'/leaderboard'} component={LeaderBoardPage} />
         <Route exact path={'/login'} component={AuthorisationForm}/>
         <Route exact path={'/results'} component={ResultsPage}/>
+        <Route exact path={'/wait'} component={WaitPage}/>
       </Switch>
     </Router>
   )
