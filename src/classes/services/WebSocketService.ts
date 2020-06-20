@@ -7,7 +7,7 @@ export enum WsMessageType {
 
 class WebSocketService {
   private socketClient: any
-  public init = () => {
+  public init = (history: any) => {
     const token = localStorage.getItem('token')
     if (token) {
       this.socketClient = io('http://localhost:4433', { query: { token } })
@@ -17,6 +17,12 @@ class WebSocketService {
       })
       this.socketClient.on('message', (data: any) => {
         console.log(data)
+        if (data.joinStatus && data.joinStatus === 'game') {
+          history.push('/game')
+        }
+        if (data.joinStatus && data.joinStatus === 'relogin') {
+          history.push('/wait')
+        }
       })
     }
   }
