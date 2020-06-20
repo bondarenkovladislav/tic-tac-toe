@@ -1,5 +1,5 @@
 import Button from '@material-ui/core/Button'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ApiClient } from '../classes/services/ApiClient'
 import {
   WebSocketService,
@@ -12,6 +12,7 @@ import { withRouter } from 'react-router-dom'
 const Home_ = (props: any) => {
   const [userName, setUserName] = useState('')
   const [reqRes, setReqRes] = useState()
+
   return (
     <div>
       <Button
