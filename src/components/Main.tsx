@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom'
-import React from 'react'
+import { BrowserRouter as Router, Route, Switch, useHistory, withRouter } from 'react-router-dom'
+import React, { useEffect } from 'react'
 import { Home } from './Home'
 import { LeaderBoardPage } from './LeaderBoardPage'
 import { TempPage } from './TempPage'
@@ -7,7 +7,10 @@ import { AuthorisationForm } from './AuthorisationForm'
 import { ResultsPage } from './ResultsPage'
 import { WaitPage } from './WaitPage'
 
-export const Main = () => {
+
+
+export const Main = (props:any) => {
+
   return (
     <Router>
       <Switch>
@@ -19,5 +22,8 @@ export const Main = () => {
         <Route exact path={'/wait'} component={WaitPage} />
       </Switch>
     </Router>
+
   )
 }
+
+

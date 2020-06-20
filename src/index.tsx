@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router } from 'react-router-dom'
+import { Router, withRouter, Route, Switch } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import { Main } from './components/Main'
 import { InitializationService } from './classes/services/InitializationService'

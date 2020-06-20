@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Button, AppBar, Tabs, Tab, Link } from '@material-ui/core';
 import styles from './AuthorisationForm.module.scss'
 import { ApiClient } from '../classes/services/ApiClient'
+import { withRouter } from 'react-router-dom';
+import { WebSocketService } from '../classes/services/WebSocketService';
+
 
 export const ToolBar = () => {
     return (
@@ -16,7 +19,7 @@ export const ToolBar = () => {
     );
 }
 
-export const AuthorisationForm = (props: any) => {
+export const AuthorisationForm_ = (props: any) => {
 
     const [userName, setUserName] = useState('')
 
@@ -42,8 +45,9 @@ export const AuthorisationForm = (props: any) => {
                             alert('Error! Invalid data')
                         else {
                             ApiClient.login(userName)
+                            WebSocketService.init()
                             localStorage.setItem('key', 'token')
-                            window.location.assign('/wait')
+                            props.history.push('/wait')
                         }
                         //let token = ;
                         //localStorage.setItem('key', token)
@@ -55,3 +59,5 @@ export const AuthorisationForm = (props: any) => {
         </div>
     );
 }
+
+export const AuthorisationForm = withRouter(AuthorisationForm_)
