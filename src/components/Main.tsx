@@ -9,7 +9,16 @@ import { WaitPage } from './WaitPage'
 
 
 
-export const Main = (props:any) => {
+export const Main_ = (props:any) => {
+
+  useEffect(() => {
+    if (localStorage.getItem('key') != null) {
+    props.history.push('/wait')
+    }
+    else {
+    props.history.push('/login')
+    }
+    },[])
 
   return (
     <Router>
@@ -26,4 +35,4 @@ export const Main = (props:any) => {
   )
 }
 
-
+export const Main = withRouter(Main_)
