@@ -8,6 +8,7 @@ import {
 import React, { useEffect } from 'react'
 import { Home } from './Home'
 import { LeaderBoardPage } from './LeaderBoardPage'
+import { Board } from './PlayingField'
 import { TempPage } from './TempPage'
 import { AuthorisationForm } from './AuthorisationForm'
 import { ResultsPage } from './ResultsPage'
@@ -25,6 +26,7 @@ export const Main_ = (props: any) => {
           <Route exact path={'/login'} component={AuthorisationForm} />
           <Route exact path={'/results'} component={ResultsPage} />
           <Route exact path={'/wait'} component={WaitPage} />
+          <Route exact path={'/game'} component={Board} />
         </RouterController>
       </Switch>
     </Router>
