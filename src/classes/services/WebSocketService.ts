@@ -2,19 +2,23 @@ import io from 'socket.io-client'
 
 export enum WsMessageType {
   Step = 'Step',
+  Join = 'Join',
 }
 
 class WebSocketService {
   private socketClient: any
   public init = () => {
-    this.socketClient = io('http://localhost:4433')
-    this.socketClient.open()
-    this.socketClient.on('connect', function (data: any) {
-      console.log('connected to socket', data)
-    })
-    this.socketClient.on('message', (data: any) => {
-      console.log(data)
-    })
+    const token = localStorage.getItem('token')
+    if (token) {
+      this.socketClient = io('http://localhost:4433', { query: { token } })
+      this.socketClient.open()
+      this.socketClient.on('connect', function (data: any) {
+        console.log('connected to socket', data)
+      })
+      this.socketClient.on('message', (data: any) => {
+        console.log(data)
+      })
+    }
   }
 
   public sendMessage = (data: string) => {
