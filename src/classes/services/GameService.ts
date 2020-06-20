@@ -13,7 +13,12 @@ export class GameService {
     })
   }
 
-  public static getScoreBoard = () => {
-
+  public static joinToTheGame = () => {
+    WebSocketService.sendJson({
+      messageType: WsMessageType.Join,
+      token: localStorage.getItem('token'),
+    })
   }
+
+  public static getScoreBoard = () => {}
 }
