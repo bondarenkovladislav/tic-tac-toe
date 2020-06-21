@@ -5,21 +5,28 @@ import { ApiClient } from '../classes/services/ApiClient'
 import { withRouter } from 'react-router-dom'
 import { WebSocketService } from '../classes/services/WebSocketService'
 
-export const ToolBar = () => {
+const ToolBar_ = (props: any) => {
   return (
     <div>
       <AppBar>
         <Tabs value={null}>
           <Tab
-            onClick={() => window.location.assign('/results')}
+            onClick={() => props.history.push('/results')}
             label="Results Page"
           />
-          <Tab onClick={() => window.location.assign('/login')} label="Exit" />
+          <Tab
+            onClick={() => {
+              localStorage.clear()
+              props.history.push('/login')
+            }}
+            label="Exit"
+          />
         </Tabs>
       </AppBar>
     </div>
   )
 }
+export const ToolBar = withRouter(ToolBar_)
 
 export const AuthorisationForm_ = (props: any) => {
   const [userName, setUserName] = useState('')

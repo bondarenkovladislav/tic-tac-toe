@@ -11,21 +11,9 @@ type Props = {
 }
 
 export class Square extends Component<Props, State> {
-  state = {
-    clicked: false,
-  }
-
-  componentWillReceiveProps(nextProps: any) {
-    if (nextProps.disable === true) {
-      this.setState({ clicked: true })
-    }
-  }
-
   handleClick = () => {
-    if (!this.state.clicked) {
-      this.setState({ clicked: true })
-      this.props.setValue(this.props.row, this.props.col)
-    }
+    this.setState({ clicked: true })
+    this.props.setValue(this.props.row, this.props.col)
   }
 
   render() {

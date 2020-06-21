@@ -4,28 +4,34 @@ import Square from './Square'
 import './style.scss'
 import styles from './PlayingField.module.scss'
 import { WebSocketService } from '../classes/services/WebSocketService'
-import { Snackbar } from '@material-ui/core'
+import { Snackbar, Button } from '@material-ui/core'
+import { dark } from '@material-ui/core/styles/createPalette'
+import { AuthorisationForm_, ToolBar } from './AuthorisationForm'
+import { withRouter } from 'react-router-dom'
 
 type State = {
   matrix: Array<Array<string>>
   turn: string
-  winner: string
+  winner: number
   restart: boolean
   notification: string
+  restarting: boolean
 }
 type Props = {
   rows: number
   cols: number
   numToWin: number
+  history: any
 }
 
 export class Board extends Component<Props, State> {
   state = {
     matrix: new Array(3).fill(null).map((item) => new Array(3).fill(null)),
     turn: 'X',
-    winner: '',
+    winner: 0,
     restart: false,
     notification: '',
+    restarting: false,
   }
 
   createBoard = () => {
@@ -60,9 +66,10 @@ export class Board extends Component<Props, State> {
   }
 
   componentDidMount() {
-    WebSocketService.subscribe((status, field) => {
-      console.log('st', status)
-      if (status !== 'OK') {
+    WebSocketService.subscribe((status, field, winner) => {
+      if (!!winner) {
+        this.setState({ winner, matrix: field })
+      } else if (status !== 'OK') {
         switch (status) {
           case 'wrong_order':
             this.setState({
@@ -70,10 +77,15 @@ export class Board extends Component<Props, State> {
               notification: 'Another player order',
             })
             return
+          case 'filled':
+            this.setState({
+              matrix: field,
+              notification: 'Already filled',
+            })
         }
         this.setState({ matrix: field, notification: status })
       } else {
-        this.setState({ matrix: field })
+        this.setState({ matrix: field, winner: 0 })
       }
     })
   }
@@ -81,6 +93,13 @@ export class Board extends Component<Props, State> {
   render() {
     return (
       <div className={styles.board}>
+        <ToolBar />
+        {!!this.state.winner &&
+          (this.state.winner === 3 ? (
+            <div>Draw</div>
+          ) : (
+            <div>{this.state.winner == 1 ? 'X' : 'O'} won</div>
+          ))}
         {this.createBoard()}
         <Snackbar
           anchorOrigin={{
@@ -94,9 +113,22 @@ export class Board extends Component<Props, State> {
           }}
           message={this.state.notification}
         />
+        {this.state.restarting && (
+          <div>Waiting for another player to approve restart</div>
+        )}
+        {!!this.state.winner && (
+          <Button
+            disabled={this.state.restarting}
+            onClick={async () => {
+              this.setState({ restarting: true })
+              await WebSocketService.sendRestart()
+              this.setState({ restarting: false })
+            }}
+          >
+            Restart
+          </Button>
+        )}
       </div>
     )
   }
 }
-
-export default Board
