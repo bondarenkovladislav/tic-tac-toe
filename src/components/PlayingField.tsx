@@ -3,12 +3,15 @@ import React, { Component } from 'react'
 import Square from './Square'
 import './style.scss'
 import styles from './PlayingField.module.scss'
+import { WebSocketService } from '../classes/services/WebSocketService'
+import { Snackbar } from '@material-ui/core'
 
 type State = {
   matrix: Array<Array<string>>
   turn: string
   winner: string
   restart: boolean
+  notification: string
 }
 type Props = {
   rows: number
@@ -22,6 +25,7 @@ export class Board extends Component<Props, State> {
     turn: 'X',
     winner: '',
     restart: false,
+    notification: '',
   }
 
   createBoard = () => {
@@ -46,22 +50,52 @@ export class Board extends Component<Props, State> {
         </div>
       )
     }
-    return (
-      <div className="rows-holder">
-        {board}
-      </div>
-    )
+    return <div className="rows-holder">{board}</div>
   }
 
-  handleSetValue = (lastRow: number, lastCol: number) => {
-    // let { matrix, turn } = this.state
-    // matrix[lastRow][lastCol] = turn
-    console.log(lastRow, lastCol)
+  handleSetValue = async (lastRow: number, lastCol: number) => {
+    WebSocketService.sendStep({
+      coords: [lastRow, lastCol],
+    })
+  }
+
+  componentDidMount() {
+    WebSocketService.subscribe((status, field) => {
+      console.log('st', status)
+      if (status !== 'OK') {
+        switch (status) {
+          case 'wrong_order':
+            this.setState({
+              matrix: field,
+              notification: 'Another player order',
+            })
+            return
+        }
+        this.setState({ matrix: field, notification: status })
+      } else {
+        this.setState({ matrix: field })
+      }
+    })
   }
 
   render() {
-    console.log(this.state.matrix)
-    return <div className={styles.board}>{this.createBoard()}</div>
+    return (
+      <div className={styles.board}>
+        {this.createBoard()}
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          open={!!this.state.notification}
+          autoHideDuration={6000}
+          onClose={() => {
+            this.setState({ notification: '' })
+          }}
+          message={this.state.notification}
+        />
+      </div>
+    )
   }
 }
 
