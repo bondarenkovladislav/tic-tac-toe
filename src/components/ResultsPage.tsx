@@ -53,11 +53,16 @@ export const ResultsPage = (props: any) => {
     console.log(res)
   }
 
+
   useEffect(() => {
     fetch()
   }, [])
 
   useEffect(() => {
+
+    rows.sort((prev, next)=>prev.winCount - next.winCount);
+    rows.reverse();
+
     if (rows.length) {
       const first = rows[0].winCount
       var second = rows[0].winCount
