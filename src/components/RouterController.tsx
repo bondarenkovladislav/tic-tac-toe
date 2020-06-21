@@ -4,11 +4,13 @@ import { WebSocketService } from '../classes/services/WebSocketService'
 
 export const RouterController_ = (props: any) => {
   useEffect(() => {
-    if (localStorage.getItem('key') != null) {
-      props.history.push('/wait')
-      WebSocketService.init(props.history)
-    } else {
-      props.history.push('/login')
+    if (window.location.pathname !== '/results') {
+      if (localStorage.getItem('key') != null) {
+        props.history.push('/wait')
+        WebSocketService.init(props.history)
+      } else {
+        props.history.push('/login')
+      }
     }
   }, [])
   return props.children

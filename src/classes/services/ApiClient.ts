@@ -20,4 +20,8 @@ export class ApiClient {
       localStorage.setItem('token', result.token)
     }
   }
+
+  public static fetchLeaderBoard = async () => {
+    return (await axios.get('http://localhost:4433/get-score')).data.result
+  }
 }

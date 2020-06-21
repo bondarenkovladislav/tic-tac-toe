@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0c7b06a0-2fe3-4691-8c11-0ed8c566d119" name="Default Changelist" comment="Temp main page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/services/ApiClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/services/ApiClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResultsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResultsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RouterController.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RouterController.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,7 +13,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="TTT-4" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1592677174" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="TTT-4" />
+                    <option name="lastUsedInstant" value="1592677153" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="ProjectId" id="1cMVOet6sPDUaGJE1ZUwmCg6I58" />
   <component name="ProjectViewState">
@@ -60,6 +93,7 @@
       <workItem from="1591285329233" duration="3609000" />
       <workItem from="1592158305591" duration="1950000" />
       <workItem from="1592414711299" duration="1918000" />
+      <workItem from="1592727830646" duration="7899000" />
     </task>
     <task id="LOCAL-00001" summary="WebSocket client set up">
       <created>1590944577232</created>
@@ -103,7 +137,49 @@
       <option name="project" value="LOCAL" />
       <updated>1592159874424</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Router Controller">
+      <created>1592677570097</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1592677570097</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed broken brace">
+      <created>1592677923886</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1592677923886</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Field refactor">
+      <created>1592680413961</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1592680413961</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Login process">
+      <created>1592684344715</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1592684344715</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Game step validation">
+      <created>1592735493004</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1592735493004</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Toolbar and bugfixes">
+      <created>1592743610569</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1592743610569</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,41 +192,59 @@
     <MESSAGE value="Temp main page" />
     <MESSAGE value="Rem lock" />
     <MESSAGE value="port disable" />
-    <option name="LAST_COMMIT_MESSAGE" value="port disable" />
+    <MESSAGE value="Router Controller" />
+    <MESSAGE value="Fixed broken brace" />
+    <MESSAGE value="Field refactor" />
+    <MESSAGE value="Login process" />
+    <MESSAGE value="Game step validation" />
+    <MESSAGE value="Toolbar and bugfixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Toolbar and bugfixes" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592743766608">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="424" y="262" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1592743766608" />
     <state x="684" y="400" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592415446903">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="684" y="400" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1200@0.0.1920.1200" timestamp="1592415446903" />
-    <state x="363" y="108" key="CommitChangelistDialog2" timestamp="1592159874267">
+    <state x="363" y="108" key="CommitChangelistDialog2" timestamp="1592743610398">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="363" y="108" key="CommitChangelistDialog2/-332.-1080.2560.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1591287364376" />
-    <state x="363" y="108" key="CommitChangelistDialog2/0.0.1920.1200@0.0.1920.1200" timestamp="1592159874267" />
+    <state x="363" y="108" key="CommitChangelistDialog2/0.0.1920.1200@0.0.1920.1200" timestamp="1592743610398" />
+    <state x="220" y="0" key="MergeDialog" timestamp="1592677212042">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="220" y="0" key="MergeDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1592677212042" />
+    <state x="524" y="159" width="928" height="596" key="MultipleFileMergeDialog" timestamp="1592677222176">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="524" y="159" width="928" height="596" key="MultipleFileMergeDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1592677222176" />
     <state x="461" y="239" key="SettingsEditor" timestamp="1590927451424">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="461" y="239" key="SettingsEditor/-332.-1080.2560.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1590339182175" />
     <state x="461" y="239" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1590927451424" />
-    <state x="560" y="336" key="Vcs.Push.Dialog.v2" timestamp="1592159875714">
+    <state x="560" y="336" key="Vcs.Push.Dialog.v2" timestamp="1592743611768">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="560" y="336" key="Vcs.Push.Dialog.v2/-332.-1080.2560.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1591287366289" />
-    <state x="560" y="336" key="Vcs.Push.Dialog.v2/0.0.1920.1200@0.0.1920.1200" timestamp="1592159875714" />
-    <state x="746" y="517" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592414832390">
+    <state x="560" y="336" key="Vcs.Push.Dialog.v2/0.0.1920.1200@0.0.1920.1200" timestamp="1592743611768" />
+    <state x="746" y="517" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592677877401">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="746" y="517" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1200@0.0.1920.1200" timestamp="1592414832390" />
-    <state x="662" y="339" width="596" height="522" key="find.popup" timestamp="1592158853488">
+    <state x="746" y="517" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1200@0.0.1920.1200" timestamp="1592677877401" />
+    <state x="662" y="339" width="596" height="522" key="find.popup" timestamp="1592743448568">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="662" y="339" width="596" height="522" key="find.popup/-332.-1080.2560.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1590338615647" />
-    <state x="662" y="339" width="596" height="522" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1592158853488" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1591287500500">
+    <state x="662" y="339" width="596" height="522" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1592743448568" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1592743618094">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/-332.-1080.2560.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1591287500500" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1590939614572" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1592743618094" />
   </component>
 </project>
