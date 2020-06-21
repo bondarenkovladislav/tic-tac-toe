@@ -55,7 +55,7 @@ export const ResultsPage = (props: any) => {
       var second = rows[0].winCount
       var third = rows[0].winCount
 
-      for (var i = 1; ; i++) {
+      for (var i = 1;i<rows.length ; i++) {
         if (rows[i].winCount != first) {
           second = rows[i].winCount
           console.log(second)
@@ -63,7 +63,7 @@ export const ResultsPage = (props: any) => {
         }
       }
 
-      for (var i = 1; ; i++) {
+      for (var i = 1;i<rows.length ; i++) {
           console.log(rows)
         if (rows[i].winCount != first && rows[i].winCount != second) {
           third = rows[i].winCount
@@ -74,6 +74,9 @@ export const ResultsPage = (props: any) => {
 
       var topValuesLocal = [first, second, third]
       setTopValues(topValuesLocal)
+      console.log(topValues[0])
+      console.log(topValues[1])
+      console.log(topValues[2])
     }
   }, [rows])
 
