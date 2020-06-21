@@ -47,6 +47,8 @@ export const ResultsPage = (props: any) => {
   const [rows, setRows] = useState<IUserScore[]>([])
   const [topValues, setTopValues] = useState<any[]>([])
 
+  document.title='Страница результатов'
+  
   const fetch = async () => {
     const res = await ApiClient.fetchLeaderBoard()
     setRows(res || [])
@@ -94,10 +96,10 @@ export const ResultsPage = (props: any) => {
   return (
     <ThemeProvider theme={theme}>
       <div className={styles.root}>
-        <div className={styles.letter}>TOP PLAYERS</div>
+        <div className={styles.letter}>Лучшие игроки</div>
         <div className={styles.block}>
           <ToolBar />
-          <TableContainer component={Paper}>
+          <TableContainer component={Paper} elevation={0}>
             <Table size="small">
               <TableBody>
                 {rows.map((row) => (
