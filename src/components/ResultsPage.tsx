@@ -63,6 +63,7 @@ export const ResultsPage = (props: any) => {
       }
 
       for (var i = 1; ; i++) {
+          console.log(rows)
         if (rows[i].winCount != first && rows[i].winCount != second) {
           third = rows[i].winCount
           console.log(third)

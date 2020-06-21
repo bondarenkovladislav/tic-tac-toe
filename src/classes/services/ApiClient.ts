@@ -22,6 +22,6 @@ export class ApiClient {
   }
 
   public static fetchLeaderBoard = async () => {
-    return (await axios.get('http://localhost:4433/get-score')).data.result
+    return (await axios.get('https://still-plateau-44878.herokuapp.com/get-score')).data.result
   }
 }
