@@ -46,12 +46,14 @@ export const AuthorisationForm_ = (props: any) => {
         <TextField
           id="name"
           size="small"
+          color='primary'
           margin="normal"
-          variant="filled"
           className={styles.textField}
           placeholder={'Имя'}
           onChange={(e) => setUserName(e.target.value)}
         />
+        <br/>
+        <br/>
         <Button
           className={styles.button}
           variant="contained"

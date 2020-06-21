@@ -8,7 +8,7 @@ export const WaitPage = (props: any) => {
     return (
         <ThemeProvider theme={theme}>
         <div className={styles.root}>
-            <div className={styles.letter}>Wait another player...</div>
+            <div className={styles.letter}>Ожидайте другого игрока...</div>
             <br />
             <div>
                 <CircularProgress />
@@ -23,7 +23,7 @@ export const WaitPage = (props: any) => {
                     var url = window.location.href;
                     navigator.clipboard.writeText(url);
                 }}
-            >Копировать ссылку</Button>
+            >Копировать</Button>
         </div>
         </ThemeProvider>
     );
