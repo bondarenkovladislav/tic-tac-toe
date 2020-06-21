@@ -5,7 +5,6 @@ import { ApiClient } from '../classes/services/ApiClient'
 import { withRouter } from 'react-router-dom'
 import { WebSocketService } from '../classes/services/WebSocketService'
 import { orange } from '@material-ui/core/colors'
-import { withRouter } from 'react-router-dom'
 
 export const theme = createMuiTheme({
     palette: {
