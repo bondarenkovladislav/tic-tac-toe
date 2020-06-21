@@ -1,91 +1,112 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
-    Table, TableBody, TableRow, TableCell,
-    TableContainer, Paper, Avatar} from '@material-ui/core'
+  Table,
+  TableBody,
+  TableRow,
+  TableCell,
+  TableContainer,
+  Paper,
+  Avatar,
+  ThemeProvider,
+} from '@material-ui/core'
 import styles from './ResultsPage.module.scss'
-import { ToolBar } from './AuthorisationForm'
+import { ToolBar, theme } from './AuthorisationForm'
+import { ApiClient } from '../classes/services/ApiClient'
 
 function createData(userName: string, winCount: number) {
-    return { userName, winCount }
+  return { userName, winCount }
+}
+
+interface IUserScore {
+  userName: string
+  winCount: number
 }
 
 function setPicture(num: number, topValue: number[]) {
-    var src = 'https://www.vippng.com/png/detail/486-4864508_estrella-sin-fondo-imagui-174-gifs-y-fondos.png'
-    if (num == topValue[0])
-        src = 'https://static.my-shop.ru/product/3/390/3898083.jpg';
-    if (num == topValue[1])
-        src = 'https://123mesto.ru/wa-data/public/shop/products/49/43/14349/images/22435/22435.750x0.jpg'
-    if (num == topValue[2])
-        src = 'https://static.my-shop.ru/product/3/390/3898477.jpg'
-    return src
+  var src =
+    'https://www.vippng.com/png/detail/486-4864508_estrella-sin-fondo-imagui-174-gifs-y-fondos.png'
+  if (num == topValue[0])
+    src = 'https://static.my-shop.ru/product/3/390/3898083.jpg'
+  if (num == topValue[1])
+    src =
+      'https://123mesto.ru/wa-data/public/shop/products/49/43/14349/images/22435/22435.750x0.jpg'
+  if (num == topValue[2])
+    src = 'https://static.my-shop.ru/product/3/390/3898477.jpg'
+  return src
 }
 
 export const ResultsPage = (props: any) => {
-    const rows = [
-        createData('name1', 20),
-        createData('name2', 20),
-        createData('name2.0', 15),
-        createData('name3', 15),
-        createData('name4', 8),
-        createData('name5', 1),
-        createData('name1', 0),
-        createData('name2', 1),
-        createData('name2.0', 1),
-        createData('name1', 0),
-        createData('name2', 1),
-        createData('name2.0', 1),
-        createData('name1', 0),
-        createData('name2', 1),
-        createData('name2.0', 1)
-    ]
+  const [rows, setRows] = useState<IUserScore[]>([])
+  const [topValues, setTopValues] = useState<any[]>([])
 
-    const first = rows[0].winCount;
-    var second = rows[0].winCount;
-    var third = rows[0].winCount;
-    
-    for (var i = 1; ; i++) {
+  const fetch = async () => {
+    const res = await ApiClient.fetchLeaderBoard()
+    setRows(res || [])
+    console.log(res)
+  }
+
+  useEffect(() => {
+    fetch()
+  }, [])
+
+  useEffect(() => {
+    if (rows.length) {
+      const first = rows[0].winCount
+      var second = rows[0].winCount
+      var third = rows[0].winCount
+
+      for (var i = 1; ; i++) {
         if (rows[i].winCount != first) {
-            second = rows[i].winCount
-            console.log(second)
-            break;
+          second = rows[i].winCount
+          console.log(second)
+          break
         }
-    }
+      }
 
-    for (var i = 1; ; i++) {
+      for (var i = 1; ; i++) {
+          console.log(rows)
         if (rows[i].winCount != first && rows[i].winCount != second) {
-            third = rows[i].winCount
-            console.log(third)
-            break;
+          third = rows[i].winCount
+          console.log(third)
+          break
         }
+      }
+
+      var topValuesLocal = [first, second, third]
+      setTopValues(topValuesLocal)
     }
+  }, [rows])
 
-    var topValues=[first,second,third]
-
-    return (
-        <div className={styles.root}>
-            <div className={styles.letter}>TOP PLAYERS</div>
-            <div className={styles.block}>
-                <ToolBar />
-                <TableContainer component={Paper}>
-                    <Table size='small'>
-                        <TableBody>{
-                            rows.map((row) => (
-                                <TableRow>
-                                    <TableCell>
-                                        <Avatar variant="rounded" className={styles.avatar}
-                                            src={setPicture(row.winCount, topValues)}
-                                        />
-                                    </TableCell>
-                                    <TableCell component="th" scope="row" >{rows.lastIndexOf(row) + 1}</TableCell>
-                                    <TableCell align="center">{row.userName}</TableCell>
-                                    <TableCell align="center">{row.winCount}</TableCell>
-                                </TableRow>
-                            ))
-                        }
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </div>
-        </div>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+    <div className={styles.root}>
+      <div className={styles.letter}>TOP PLAYERS</div>
+      <div className={styles.block}>
+        <ToolBar />
+        <TableContainer component={Paper}>
+          <Table size="small">
+            <TableBody>
+              {rows.map((row) => (
+                <TableRow>
+                  <TableCell>
+                    <Avatar
+                      variant="rounded"
+                      className={styles.avatar}
+                      src={setPicture(row.winCount, topValues)}
+                    />
+                  </TableCell>
+                  <TableCell component="th" scope="row">
+                    {rows.lastIndexOf(row) + 1}
+                  </TableCell>
+                  <TableCell align="center">{row.userName}</TableCell>
+                  <TableCell align="center">{row.winCount}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
+    </div>
+    </ThemeProvider>
+  )
 }

@@ -20,4 +20,8 @@ export class ApiClient {
       localStorage.setItem('token', result.token)
     }
   }
+
+  public static fetchLeaderBoard = async () => {
+    return (await axios.get('https://still-plateau-44878.herokuapp.com/get-score')).data.result
+  }
 }
