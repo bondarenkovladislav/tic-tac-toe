@@ -7,7 +7,7 @@ import {
   TableContainer,
   Paper,
   Avatar,
-  ThemeProvider,
+    ThemeProvider,
 } from '@material-ui/core'
 import styles from './ResultsPage.module.scss'
 import { ToolBar, theme } from './AuthorisationForm'

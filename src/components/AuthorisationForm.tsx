@@ -13,25 +13,25 @@ export const theme = createMuiTheme({
   });
 
 const ToolBar_ = (props: any) => {
-  return (
-    <div>
-      <AppBar>
-        <Tabs value={null}>
-          <Tab
-            onClick={() => props.history.push('/results')}
-            label="Страница результатов"
-          />
-          <Tab
-            onClick={() => {
-              localStorage.clear()
-              props.history.push('/login')
-            }}
-            label="Выход"
-          />
-        </Tabs>
-      </AppBar>
-    </div>
-  )
+    return (
+        <div>
+            <AppBar>
+                <Tabs value={null}>
+                    <Tab
+                        onClick={() => props.history.push('/results')}
+                        label="Results Page"
+                    />
+                    <Tab
+                        onClick={() => {
+                            localStorage.clear()
+                            props.history.push('/login')
+                        }}
+                        label="Exit"
+                    />
+                </Tabs>
+            </AppBar>
+        </div>
+    )
 }
 export const ToolBar = withRouter(ToolBar_)
 
