@@ -18,7 +18,7 @@ class WebSocketService {
   public init = (history: any) => {
     const token = localStorage.getItem('token')
     if (token) {
-      this.socketClient = io('http://localhost:4433', { query: { token } })
+      this.socketClient = io('https://still-plateau-44878.herokuapp.com/', { query: { token } })
       this.socketClient.open()
       this.socketClient.on('connect', function (data: any) {
         console.log('connected to socket', data)

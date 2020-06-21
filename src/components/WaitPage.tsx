@@ -1,10 +1,12 @@
 import React from 'react'
 import styles from './WaitPage.module.scss'
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { Button } from '@material-ui/core'
+import { Button, ThemeProvider } from '@material-ui/core'
+import { theme } from './AuthorisationForm';
 
 export const WaitPage = (props: any) => {
     return (
+        <ThemeProvider theme={theme}>
         <div className={styles.root}>
             <div className={styles.letter}>Wait another player...</div>
             <br />
@@ -21,8 +23,8 @@ export const WaitPage = (props: any) => {
                     var url = window.location.href;
                     navigator.clipboard.writeText(url);
                 }}
-            >Copy link</Button>
+            >Копировать ссылку</Button>
         </div>
-
+        </ThemeProvider>
     );
 }
