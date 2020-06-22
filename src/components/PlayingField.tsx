@@ -4,9 +4,9 @@ import Square from './Square'
 import './style.scss'
 import styles from './PlayingField.module.scss'
 import { WebSocketService } from '../classes/services/WebSocketService'
-import { Snackbar, Button } from '@material-ui/core'
+import { Snackbar, Button, ThemeProvider } from '@material-ui/core'
 import { dark } from '@material-ui/core/styles/createPalette'
-import { AuthorisationForm_, ToolBar } from './AuthorisationForm'
+import { AuthorisationForm_, ToolBar, theme } from './AuthorisationForm'
 import { withRouter } from 'react-router-dom'
 
 type State = {
@@ -66,6 +66,7 @@ export class Board extends Component<Props, State> {
   }
 
   componentDidMount() {
+    document.title='Игра'
     WebSocketService.subscribe((status, field, winner) => {
       if (!!winner) {
         this.setState({ winner, matrix: field })
@@ -74,13 +75,13 @@ export class Board extends Component<Props, State> {
           case 'wrong_order':
             this.setState({
               matrix: field,
-              notification: 'Another player order',
+              notification: 'Ход другого игрока',
             })
             return
           case 'filled':
             this.setState({
               matrix: field,
-              notification: 'Already filled',
+              notification: 'Уже заполнено',
             })
         }
         this.setState({ matrix: field, notification: status })
@@ -93,13 +94,15 @@ export class Board extends Component<Props, State> {
   render() {
     return (
       <div className={styles.board}>
-        <ToolBar />
+        <ThemeProvider theme={theme}>
+          <ToolBar />
+        </ThemeProvider>
         {!!this.state.winner &&
           (this.state.winner === 3 ? (
-            <div>Draw</div>
+            <div>Ходить</div>
           ) : (
-            <div>{this.state.winner == 1 ? 'X' : 'O'} won</div>
-          ))}
+              <div>{this.state.winner == 1 ? 'X' : 'O'} won</div>
+            ))}
         {this.createBoard()}
         <Snackbar
           anchorOrigin={{
@@ -114,20 +117,26 @@ export class Board extends Component<Props, State> {
           message={this.state.notification}
         />
         {this.state.restarting && (
-          <div>Waiting for another player to approve restart</div>
+          <div className={styles.letter}>Ожидайте, когда другой игрок одобрит перезапуск</div>
         )}
-        {!!this.state.winner && (
-          <Button
-            disabled={this.state.restarting}
-            onClick={async () => {
-              this.setState({ restarting: true })
-              await WebSocketService.sendRestart()
-              this.setState({ restarting: false })
-            }}
-          >
-            Restart
-          </Button>
-        )}
+        <br />
+        <ThemeProvider theme={theme}>
+          {!!this.state.winner && (
+            <Button
+              variant="contained"
+              color="primary"
+              size="medium"
+              disabled={this.state.restarting}
+              onClick={async () => {
+                this.setState({ restarting: true })
+                await WebSocketService.sendRestart()
+                this.setState({ restarting: false })
+              }}
+            >
+              Заново
+            </Button>
+          )}
+        </ThemeProvider>
       </div>
     )
   }
