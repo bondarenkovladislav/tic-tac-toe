@@ -101,7 +101,7 @@ export class Board extends Component<Props, State> {
           (this.state.winner === 3 ? (
             <div className={styles.letter}>Ходить</div>
           ) : (
-              <div className={styles.letter}>{this.state.winner == 1 ? 'X' : 'O'} won</div>
+              <div className={styles.letter}>{this.state.winner == 1 ? 'X' : 'O'} выиграл</div>
             ))}
             <br/>
         {this.createBoard()}

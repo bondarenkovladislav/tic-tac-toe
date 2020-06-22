@@ -22,7 +22,7 @@ export class Square extends Component<Props, State> {
     const { value, color } = this.props
     return (
       <div className={styles.square} onClick={this.handleClick}>
-        <span style={{ color: color ? `${color}` : '' }}>
+        <span style={{color: value === 1? 'red': 'yellow', fontStyle: 'Helvetica, sans-serif'}}>
           {value === 1 ? 'X' : value === 2 ? 'O' : ''}
         </span>
       </div>

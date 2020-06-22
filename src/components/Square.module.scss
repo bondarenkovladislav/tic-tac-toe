@@ -5,7 +5,8 @@
     border: 1px orange;
     border-radius: 3px;
     color:white;
-    font-style: Montserrat;
+    font-family: sans-serif;
+    font-style: Helvetica, sans-serif;
     float: left;
     cursor: pointer;
     text-align: center;
@@ -14,12 +15,13 @@
         font-size: 90px;
         text-align: center;
         line-height: 1.2;
+        font-style:  Helvetica, sans-serif;
     }
     &.O span {
-        color: #0808c1;
+        color: yellow;
     }
     &.X span {
-        color: #e00707;
+        color: red;
     }
 }
 
