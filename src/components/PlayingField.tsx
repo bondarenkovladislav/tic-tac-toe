@@ -99,10 +99,11 @@ export class Board extends Component<Props, State> {
         </ThemeProvider>
         {!!this.state.winner &&
           (this.state.winner === 3 ? (
-            <div>Ходить</div>
+            <div className={styles.letter}>Ходить</div>
           ) : (
-              <div>{this.state.winner == 1 ? 'X' : 'O'} won</div>
+              <div className={styles.letter}>{this.state.winner == 1 ? 'X' : 'O'} выиграл</div>
             ))}
+            <br/>
         {this.createBoard()}
         <Snackbar
           anchorOrigin={{
@@ -122,7 +123,8 @@ export class Board extends Component<Props, State> {
         <br />
         <ThemeProvider theme={theme}>
           {!!this.state.winner && (
-            <Button
+            <Button 
+              className={styles.button}
               variant="contained"
               color="primary"
               size="medium"
